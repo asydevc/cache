@@ -1,0 +1,4 @@
+# config from github.com/asydevc/log/v2
+adapter: term
+level: DEBUG
+time: "15:04:05.999"
