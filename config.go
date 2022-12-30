@@ -55,7 +55,7 @@ func (o *configuration) Pool() *redis.Pool { return o.pool }
 // Initialize default configuration.
 func (o *configuration) initialize() {
 	o.mutex = new(sync.RWMutex)
-	for _, file := range []string{"./tmp/cache.yaml", "./config/cache.yaml", "../config/cache.yaml"} {
+	for _, file := range []string{"./tmp/cache.yaml", "./config/cache.yaml", "../config/cache.yaml", "../../configs/cache.yaml"} {
 		if nil == o.LoadYaml(file) {
 			break
 		}
