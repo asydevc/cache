@@ -1,10 +1,10 @@
-// author: wsasydevc <websearch@163.com>
+// author: asydevc <websearch@163.com>
 // date: 2021-02-21
 
 package cache
 
 import (
-	"io/ioutil"
+	"os"
 	"sync"
 	"time"
 
@@ -32,10 +32,10 @@ type configuration struct {
 	pool         *redis.Pool
 }
 
-// Load configuration from specified yaml file.
+// LoadYaml Load configuration from specified yaml file.
 func (o *configuration) LoadYaml(file string) error {
 	// 1. read file content.
-	body, err := ioutil.ReadFile(file)
+	body, err := os.ReadFile(file)
 	if err != nil {
 		return err
 	}
@@ -49,7 +49,7 @@ func (o *configuration) LoadYaml(file string) error {
 	return nil
 }
 
-// Return connection pool.
+// Pool Return connection pool.
 func (o *configuration) Pool() *redis.Pool { return o.pool }
 
 // Initialize default configuration.
